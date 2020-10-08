@@ -6,8 +6,8 @@ void main() {
       home: Scaffold(
           backgroundColor: Colors.blueGrey,
         appBar:AppBar(
-          title: Text('I Am Ali'),
-          backgroundColor: Colors.blueGrey[900],
+          title: Text('I Am Samar'),
+          backgroundColor: Colors.blueGrey[400],
         ),
         body: Image(
           image:NetworkImage('https://scitechdaily.com/images/Illustration-Photons-Galaxy-777x518.jpg'),
