@@ -1,7 +1,5 @@
-name: i_am_rich
+name: i_am_poor_challenge
 description: A new Flutter application.
-publish_to: 'none'
-
 
 version: 1.0.0+1
 
@@ -11,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+
 
 
   cupertino_icons: ^1.0.0
@@ -23,4 +22,4 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-   - images/ # we can remove the name of image and use the floder
+  - images/

@@ -4,13 +4,15 @@ void main() {
   runApp(
     MaterialApp(
       home: Scaffold(
-          backgroundColor: Colors.blueGrey,
+          backgroundColor: Colors.blueGrey[200],
         appBar:AppBar(
-          title: Text('I Am Samar'),
+          title: Text('I Am Rich'),
           backgroundColor: Colors.blueGrey[400],
         ),
-        body: Image(
-          image:NetworkImage('https://scitechdaily.com/images/Illustration-Photons-Galaxy-777x518.jpg'),
+        body:Center(
+          child: Image(
+               image: AssetImage('images/diamond.png'),
+              ),
         ),
       ),
   ),
