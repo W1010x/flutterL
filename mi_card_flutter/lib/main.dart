@@ -34,6 +34,40 @@ class MyApp extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
                 ),
+                Card(
+                  color: Colors.white,
+                  margin:EdgeInsets.symmetric(vertical: 10.0,horizontal: 25.0),
+                  child:ListTile(
+                    leading:Icon(
+                      Icons.phone,
+                      color: Colors.pink,
+                    ),
+                     title: Text ('+966-55-1234-56',
+                       style: TextStyle(
+                         fontFamily:'Source Sans Pro',
+                         color: Colors.teal[400],
+                         fontSize: 20.0,
+                       ),
+                     ),
+                  )
+                ),
+                Card(
+                  color: Colors.white,
+                  margin:EdgeInsets.symmetric(vertical: 10.0,horizontal: 25.0),
+                  child:ListTile(
+                    leading: Icon(
+                      Icons.email,
+                      color: Colors.pink,
+                    ),
+                    title:Text ('Samar@gmail.com',
+                      style: TextStyle(
+                        fontFamily:'Source Sans Pro',
+                        color: Colors.teal[400],
+                        fontSize: 20.0,
+                      ),
+                    ),
+                  )
+                )
               ],
             ),
       ),
@@ -41,3 +75,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
