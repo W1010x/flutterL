@@ -1,5 +1,5 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
-
 void main() {
   return runApp(
     MaterialApp(
@@ -20,6 +20,13 @@ class DicePage extends StatefulWidget {
 }
 class _DicePageState extends State<DicePage> {
   int leftDiceNumber=1;
+  int RightDiceNumber=1;
+  void changeDiceFace(){
+    setState(() {
+      leftDiceNumber= Random().nextInt(6)+1;// we add 1 to change the range to 1-6
+      RightDiceNumber= Random().nextInt(6)+1;
+    });
+  }
   @override
   Widget build(BuildContext context) { //when I Do hot reload everything change between this curlybraces
     return Center(// Center widget make all content in the center
@@ -28,10 +35,7 @@ class _DicePageState extends State<DicePage> {
           Expanded( // expanded widget help us to full the horzintol spaces it fill space is it can with out overzied
             child: FlatButton(
               onPressed: () {//VoidCallBack()
-                setState(() {
-                  leftDiceNumber= 3;
-                  print('Dice=$leftDiceNumber');
-                });
+                changeDiceFace();
               },
               child: Image.asset(
                   'images/dice$leftDiceNumber.png'),
@@ -40,9 +44,9 @@ class _DicePageState extends State<DicePage> {
           Expanded(
             child: FlatButton(
                 onPressed: (){
-
+                  changeDiceFace();
                 },
-                child: Image.asset('images/dice1.png'),),
+                child: Image.asset('images/dice$RightDiceNumber.png'),),
           ),
         ],
       ),
