@@ -14,17 +14,24 @@ void main() {
     ),
   );
 }
-class DicePage extends StatelessWidget {
+class DicePage extends StatefulWidget {
+  @override
+  _DicePageState createState() => _DicePageState();
+}
+class _DicePageState extends State<DicePage> {
+  int leftDiceNumber=1;
   @override
   Widget build(BuildContext context) { //when I Do hot reload everything change between this curlybraces
-    var leftDiceNumber=4;
     return Center(// Center widget make all content in the center
       child: Row(
         children: [
           Expanded( // expanded widget help us to full the horzintol spaces it fill space is it can with out overzied
             child: FlatButton(
-              onPressed: (){//VoidCallBack()
-
+              onPressed: () {//VoidCallBack()
+                setState(() {
+                  leftDiceNumber= 3;
+                  print('Dice=$leftDiceNumber');
+                });
               },
               child: Image.asset(
                   'images/dice$leftDiceNumber.png'),
@@ -32,10 +39,10 @@ class DicePage extends StatelessWidget {
           ),
           Expanded(
             child: FlatButton(
-              onPressed: (){
+                onPressed: (){
 
-              },
-                child: Image.asset('images/dice1.png')),
+                },
+                child: Image.asset('images/dice1.png'),),
           ),
         ],
       ),
