@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="4a405de7-3ca6-465f-b686-312d586279aa" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,22 +50,37 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
-    <state width="1398" height="204" key="GridCell.Tab.0.bottom" timestamp="1602825111069">
-      <screen x="0" y="23" width="1440" height="797" />
+    <state width="668" height="203" key="GridCell.Tab.0.bottom" timestamp="1602907722790">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state width="668" height="203" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1602907722790" />
     <state width="1398" height="204" key="GridCell.Tab.0.bottom/0.23.1440.797@0.23.1440.797" timestamp="1602825111069" />
-    <state width="1398" height="204" key="GridCell.Tab.0.center" timestamp="1602825111069">
-      <screen x="0" y="23" width="1440" height="797" />
+    <state width="668" height="203" key="GridCell.Tab.0.center" timestamp="1602907722789">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state width="668" height="203" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1602907722789" />
     <state width="1398" height="204" key="GridCell.Tab.0.center/0.23.1440.797@0.23.1440.797" timestamp="1602825111069" />
-    <state width="1398" height="204" key="GridCell.Tab.0.left" timestamp="1602825111068">
-      <screen x="0" y="23" width="1440" height="797" />
+    <state width="668" height="203" key="GridCell.Tab.0.left" timestamp="1602907722787">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state width="668" height="203" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1602907722787" />
     <state width="1398" height="204" key="GridCell.Tab.0.left/0.23.1440.797@0.23.1440.797" timestamp="1602825111068" />
-    <state width="1398" height="204" key="GridCell.Tab.0.right" timestamp="1602825111069">
-      <screen x="0" y="23" width="1440" height="797" />
+    <state width="668" height="203" key="GridCell.Tab.0.right" timestamp="1602907722789">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state width="668" height="203" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1602907722789" />
     <state width="1398" height="204" key="GridCell.Tab.0.right/0.23.1440.797@0.23.1440.797" timestamp="1602825111069" />
     <state x="221" y="60" key="SettingsEditor" timestamp="1602734975189">
       <screen x="0" y="23" width="1440" height="797" />
