@@ -15,7 +15,7 @@ class XylophoneApp extends StatelessWidget {
         backgroundColor: Colors.black26,
         body: SafeArea(
           child:Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+            crossAxisAlignment: CrossAxisAlignment.stretch,// help us to stretch the button over the sreen
             children: [
               Expanded(
                 child:FlatButton(color:Colors.lightGreen,
