@@ -1,6 +1,7 @@
 import 'question.dart';
 class QuizBrain{
-  List<Question> questionBank=[
+  int _questionNumber=0; // we put this line here as privet to save my code to not crach my app
+  List<Question> _questionBank=[// encapsollate to make it privet and do its own job
     Question('Some cats are actually allergic to humans', true),
     Question('You can lead a cow down stairs but not up stairs.', false),
     Question('Approximately one quarter of human bones are in the feet.', true),
@@ -26,11 +27,17 @@ class QuizBrain{
     Question(
         'In West Virginia, USA, if you accidentally hit an animal with your car, you are free to take it home to eat.',
         true),
-
-
-
-
-
   ];
 
+  void nextQuestion(){
+    if (_questionNumber <_questionBank.length-1){
+      _questionNumber++;
+    }
+  }
+String getQuestionText(int _questionNumber){// create a new method
+return _questionBank[_questionNumber].questionText; // we can access to question bank cuz we are in the same file class
+}
+bool getCorrectAnswer(int _questionNumber){//create a new method
+  return _questionBank[ _questionNumber].questionAnswer;
+}
 }
