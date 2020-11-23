@@ -6,16 +6,17 @@ const bottonContainerHight=80.0;
 const activColor= Color(0xFF1D1E33);
 const unactiveColor=Color(0xFF111328);
 const bottomContainerColor=Color(0xFFEB1555);
-enum Gender{ male,female}
+enum Gender{ male,female} //enum make code more readable
 class InputPage extends StatefulWidget {
   @override
   _InputPageState createState() => _InputPageState();
 }
 class _InputPageState extends State<InputPage> {
-  Color maleCardColor=unactiveColor;
-  Color femaleCardColor=unactiveColor;
-  void updateColor(Gender gender) {
-    /*f (gender == Gender.male) {
+  Gender selectedGender;// has no value 'null'
+ // Color maleCardColor=unactiveColor;
+  //Color femaleCardColor=unactiveColor;
+  /*void updateColor(Gender gender) {
+    f (gender == Gender.male) {
       if (maleCardColor == unactiveColor) {
         maleCardColor = activColor;
         femaleCardColor=unactiveColor;
@@ -25,8 +26,8 @@ class _InputPageState extends State<InputPage> {
     }else {
       femaleCardColor=activColor;
       maleCardColor=unactiveColor;
-    }*/
-  }
+    }
+  }*/
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,11 +42,11 @@ class _InputPageState extends State<InputPage> {
                 child:GestureDetector(
               onTap:(){
                setState(() {
-                 updateColor(Gender.male);
+                 selectedGender=Gender.male;
                });
               },
               child: ReusableCard(
-                colour:maleCardColor,
+                colour:selectedGender==Gender.male?activColor:unactiveColor,//ternary operator
                 cardChild: IconContent(
                   icon: FontAwesomeIcons.mars, lable:'Male',
                 ),
@@ -55,11 +56,11 @@ class _InputPageState extends State<InputPage> {
               child: GestureDetector(
               onTap: (){
                 setState(() {
-                  updateColor(Gender.female);
+                  selectedGender=Gender.female;
                 });
               },
               child: ReusableCard(
-                colour:femaleCardColor ,
+                colour:selectedGender==Gender.female?activColor:unactiveColor ,
               cardChild: IconContent(
                 icon: FontAwesomeIcons.venus,lable: 'Femele',
               ),
