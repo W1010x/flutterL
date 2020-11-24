@@ -42,7 +42,7 @@ class _InputPageState extends State<InputPage> {
                       selectedGender= Gender.male;
                     });
                   },
-                  colour:selectedGender==Gender.male?activColor:unactiveColor,//ternary operator
+                  colour:selectedGender==Gender.male?kActivColor:kUnactiveColor,//ternary operator
                   cardChild: IconContent(
                     icon: FontAwesomeIcons.mars, lable:'Male',
                   ),
@@ -54,7 +54,7 @@ class _InputPageState extends State<InputPage> {
                     selectedGender=Gender.female;
                   });
                 },
-                colour:selectedGender==Gender.female?activColor:unactiveColor ,
+                colour:selectedGender==Gender.female?kActivColor:kUnactiveColor ,
               cardChild: IconContent(
                 icon: FontAwesomeIcons.venus,lable: 'Femele',
               ),
@@ -62,19 +62,19 @@ class _InputPageState extends State<InputPage> {
             ),
           ],
           )),
-          Expanded(child: ReusableCard(colour: activColor)),
+          Expanded(child: ReusableCard(colour: kActivColor)),
           Expanded(child: Row(
             children: [
-              Expanded(child: ReusableCard(colour: activColor)),
-              Expanded(child:ReusableCard(colour:activColor)),
+              Expanded(child: ReusableCard(colour: kActivColor)),
+              Expanded(child:ReusableCard(colour:kActivColor)),
             ],
           )
           ),
           Container(
-            color: bottomContainerColor,
+            color: kBottomContainerColor,
             margin: EdgeInsets.only(top:10.0),
             width: double.infinity,
-            height: bottonContainerHight,
+            height: kBottonContainerHight,
           ),
         ],
       )
