@@ -2,10 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'Reusable_Card.dart';
 import 'Icon_content.dart';
-const bottonContainerHight=80.0;
-const activColor= Color(0xFF1D1E33);
-const unactiveColor=Color(0xFF111328);
-const bottomContainerColor=Color(0xFFEB1555);
+import 'constant.dart';
 enum Gender{ male,female} //enum make code more readable
 class InputPage extends StatefulWidget {
   @override
