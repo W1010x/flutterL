@@ -84,7 +84,7 @@ class _InputPageState extends State<InputPage> {
                   style: kLableTextStyle,)
               ],
             ),
-            SliderTheme(
+            SliderTheme(//customising Widgets Using Themes
               data: SliderTheme.of(context).copyWith(
                 activeTrackColor: Colors.white,
                 thumbColor: Color(0xFFEB1555),
