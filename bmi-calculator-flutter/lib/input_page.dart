@@ -11,6 +11,8 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   Gender selectedGender;// has no value 'null'
   int height=180;
+  int weight= 60;
+  int age=10;
  // Color maleCardColor=unactiveColor;
   //Color femaleCardColor=unactiveColor;
   /*void updateColor(Gender gender) {
@@ -110,8 +112,36 @@ class _InputPageState extends State<InputPage> {
           )
           ),
           Expanded(child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Expanded(child: ReusableCard(colour: kActivColor)),
+              Expanded(child: ReusableCard(
+                  colour: kActivColor,
+                cardChild: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('WEIGHT',style: kLableTextStyle),
+                    Text(
+                        weight.toString(),
+                        style:kTextStyle),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        FloatingActionButton(
+                          backgroundColor:Color(0xFF4C4F5E) ,
+                            child:Icon(Icons.add,color: Colors.white,),
+                            onPressed: null),
+                        SizedBox(width: 10.0),
+                        FloatingActionButton(
+                            backgroundColor:Color(0xFF4C4F5E) ,
+                            child:Icon(Icons.add,color: Colors.white,),
+                            onPressed: null),
+                      ],
+                    )
+                  ],
+                ),
+
+              )
+              ),
               Expanded(child:ReusableCard(colour:kActivColor)),
             ],
           )
