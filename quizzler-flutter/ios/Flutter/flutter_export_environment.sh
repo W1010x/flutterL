@@ -1,8 +1,8 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
 export "FLUTTER_ROOT=/Users/samar/flutter"
-export "FLUTTER_APPLICATION_PATH=/Users/samar/AndroidStudioProjects/quizzler-flutter"
-export "FLUTTER_TARGET=/Users/samar/AndroidStudioProjects/quizzler-flutter/lib/main.dart"
+export "FLUTTER_APPLICATION_PATH=/Users/samar/flutterL/quizzler-flutter"
+export "FLUTTER_TARGET=/Users/samar/flutterL/quizzler-flutter/lib/main.dart"
 export "FLUTTER_BUILD_DIR=build"
 export "SYMROOT=${SOURCE_ROOT}/../build/ios"
 export "OTHER_LDFLAGS=$(inherited) -framework Flutter"

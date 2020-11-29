@@ -1,7 +1,7 @@
 // This is a generated file; do not edit or check into version control.
 FLUTTER_ROOT=/Users/samar/flutter
-FLUTTER_APPLICATION_PATH=/Users/samar/AndroidStudioProjects/quizzler-flutter
-FLUTTER_TARGET=/Users/samar/AndroidStudioProjects/quizzler-flutter/lib/main.dart
+FLUTTER_APPLICATION_PATH=/Users/samar/flutterL/quizzler-flutter
+FLUTTER_TARGET=/Users/samar/flutterL/quizzler-flutter/lib/main.dart
 FLUTTER_BUILD_DIR=build
 SYMROOT=${SOURCE_ROOT}/../build/ios
 OTHER_LDFLAGS=$(inherited) -framework Flutter
