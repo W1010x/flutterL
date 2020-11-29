@@ -11,6 +11,7 @@ class ResultsPage extends StatelessWidget {
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(child: Container(
             child: Text('Your Result', style: kTitleStyle
@@ -21,10 +22,22 @@ class ResultsPage extends StatelessWidget {
             flex:5 ,
           child: ReusableCard(
             colour: kActivColor,
-          ),
-          )
-        ],
-      ),
-    );
-  }
-}
+            cardChild: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
+               children: [
+             Text(
+            'Normal',
+               style: kResultTextStyle,
+              ),
+              Text('18.7',style: kBMITextstyle),
+              Text('Your BMI too low you should eat more!', style: kBodyStyle)
+              ],
+              ),
+                ),
+              ),
+             ],
+            ),
+           );
+          }
+         }
