@@ -5,6 +5,8 @@ import 'Reusable_Card.dart';
 import 'Icon_content.dart';
 import 'constant.dart';
 import 'result_page.dart';
+import 'bottm_button.dart';
+import 'round_icon_button.dart';
 enum Gender{ male,female} //enum make code more readable
 class InputPage extends StatefulWidget {
   @override
@@ -182,58 +184,18 @@ class _InputPageState extends State<InputPage> {
             ],
           )
           ),
-          BottomButton()
+          BottomButton(buttonTitle: 'CALCULATE',
+            onTap: (){
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context)=>ResultsPage()));
+          },
+          ),
         ],
       )
     );
   }
 }
 
-class BottomButton extends StatelessWidget {
-  BottomButton({ @required this.onTap, @required this.buttonTitle});
-  final Function onTap;
-  final String buttonTitle;
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: (){
-    Navigator.push(context,
-    MaterialPageRoute(builder: (context)=>ResultsPage()));
-    },
-      child: Container(
-        child: Center(
-            child: Text(
-              'CALCULATE',
-              style: kLargeButtonTextStyle,
-            ),
-        ),
-        color: kBottomContainerColor,
-        margin: EdgeInsets.only(top:10.0),
-        padding: EdgeInsets.only(bottom: 20.0),
-        width: double.infinity,
-        height: kBottonContainerHight,
-      ),
-    );
-  }
-}
 
-class RoundIconButton extends StatelessWidget {
-  RoundIconButton({@required this.icon,@required this.onPressed});
-  final IconData icon;
-  Function onPressed;
-  @override
-  Widget build(BuildContext context) {
-    return RawMaterialButton(
-      child:Icon(icon) ,
-      onPressed: onPressed,
-      elevation: 6.0,
-      constraints: BoxConstraints.tightFor(
-        width: 56.0,
-        height: 56.0,
-      ),
-      shape:CircleBorder() ,
-      fillColor: Color(0xFF4C4F5E),
 
-    );
-  }
-}
+
