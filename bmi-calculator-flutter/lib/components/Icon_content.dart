@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'constant.dart';
+import '../constant.dart';
 class IconContent extends StatelessWidget {
   IconContent({this.icon, this.lable});// create a construcror
   final IconData icon; // create a propertize
