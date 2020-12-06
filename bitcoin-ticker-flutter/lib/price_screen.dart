@@ -6,26 +6,28 @@ class PriceScreen extends StatefulWidget {
 }
 
 class _PriceScreenState extends State<PriceScreen> {
-  List<Widget> dropdowonItems=[]; //each time it loop will added to this empty list
+  //-------------------------
   String selectedCurrency = 'USD'; //create a property  hold the starting value
-  void getDropDownItem() {
+
+  List<DropdownMenuItem> getDropDownItems() {
+  List<DropdownMenuItem<String>>dropdownItems=[]; //each time it loop will added to this empty list
     //create a new method with for loop
-    for (int i = 0; i < currenciesList.length; i++) {
-      String currency = currenciesList[i];
+    for (String currency in currenciesList) {
 
       var newItem = DropdownMenuItem(
         child: Text(currency),
         value: currency,
       );
 
-      dropdowonItems.add(
-          newItem); //every time we create new item it will add it into dropdownItems
+      dropdownItems.add(newItem); //every time we create new item it will add it into dropdownItems
     }
+    return dropdownItems;
+  }
 
-}
+  //--------------
   @override
   Widget build(BuildContext context) {
-    getDropDownItem(); //call the method
+    getDropDownItems(); //call the method
     return Scaffold(
       appBar: AppBar(
         title: Text('🤑 Coin Ticker'),
@@ -62,14 +64,12 @@ class _PriceScreenState extends State<PriceScreen> {
             color: Colors.teal,
             child:DropdownButton<String>(
               value: selectedCurrency,
-              items:[DropdownMenuItem(
-              )
-            ],
-                onChanged: (value){
+              items:getDropDownItems(),
+              onChanged: (value){
                 setState(() {
                   selectedCurrency=value;// update the starting value
                 });
-                },
+              }
             ),
           ),
         ],
