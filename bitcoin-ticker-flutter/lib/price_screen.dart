@@ -6,11 +6,23 @@ class PriceScreen extends StatefulWidget {
 }
 
 class _PriceScreenState extends State<PriceScreen> {
-  String selectedCurrency='USD'; //create a property  hold the starting value
-  void getDropDownItem(){ //create a new method with for loop
-    for(int i=0 ; i<currenciesList.length ;i++)
-      print(currenciesList[i]);
-  }
+  List<Widget> dropdowonItems=[]; //each time it loop will added to this empty list
+  String selectedCurrency = 'USD'; //create a property  hold the starting value
+  void getDropDownItem() {
+    //create a new method with for loop
+    for (int i = 0; i < currenciesList.length; i++) {
+      String currency = currenciesList[i];
+
+      var newItem = DropdownMenuItem(
+        child: Text(currency),
+        value: currency,
+      );
+
+      dropdowonItems.add(
+          newItem); //every time we create new item it will add it into dropdownItems
+    }
+
+}
   @override
   Widget build(BuildContext context) {
     getDropDownItem(); //call the method
