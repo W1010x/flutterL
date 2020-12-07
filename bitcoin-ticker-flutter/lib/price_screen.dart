@@ -9,7 +9,18 @@ class PriceScreen extends StatefulWidget {
 class _PriceScreenState extends State<PriceScreen> {
   //-------------------------
   String selectedCurrency = 'USD'; //create a property  hold the starting value
-
+   DropdownButton<String> getDropdownButton(){
+     DropdownButton<String>(
+         value: selectedCurrency,
+         items:getDropDownItems(),
+         onChanged: (value){
+           setState(() {
+             selectedCurrency=value;// update the starting value
+           });
+         },
+     );
+   }
+//--------------------
   List<DropdownMenuItem> getDropDownItems() {
   List<DropdownMenuItem<String>>dropdownItems=[]; //each time it loop will added to this empty list
     //create a new method with for loop
@@ -95,12 +106,3 @@ class _PriceScreenState extends State<PriceScreen> {
 
 
 
-// DropdownButton<String>(
-// value: selectedCurrency,
-// items:getDropDownItems(),
-// onChanged: (value){
-// setState(() {
-// selectedCurrency=value;// update the starting value
-// });
-// }
-// ),
