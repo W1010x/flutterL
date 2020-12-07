@@ -12,7 +12,7 @@ class _PriceScreenState extends State<PriceScreen> {
    DropdownButton<String> getDropdownButton(){
      DropdownButton<String>(
          value: selectedCurrency,
-         items:getDropDownItems(),
+         items:androidDropDown(),
          onChanged: (value){
            setState(() {
              selectedCurrency=value;// update the starting value
@@ -21,7 +21,7 @@ class _PriceScreenState extends State<PriceScreen> {
      );
    }
 //--------------------
-  List<DropdownMenuItem> getDropDownItems() {
+  List<DropdownMenuItem> androidDropDown() {
   List<DropdownMenuItem<String>>dropdownItems=[]; //each time it loop will added to this empty list
     //create a new method with for loop
     for (String currency in currenciesList) {
@@ -37,17 +37,26 @@ class _PriceScreenState extends State<PriceScreen> {
   }
 
   //--------------
-  List<Text>getPickerItems(){
+
+CupertinoPicker iosPicker(){
+
     List<Text> pickerItems=[];
     for(String currency in currenciesList) {
-
-      pickerItems.add(  Text(currency));
+      pickerItems.add(Text(currency));
     }
-    return pickerItems; //should return it outside for loop {}
+
+     return CupertinoPicker(
+       backgroundColor: Colors.teal,
+       itemExtent:32.0 ,
+       onSelectedItemChanged:(selectedIndex){
+         print(selectedIndex);
+       },
+       children: pickerItems,
+     );
   }
   @override
   Widget build(BuildContext context) {
-    getDropDownItems(); //call the method
+
     return Scaffold(
       appBar: AppBar(
         title: Text('🤑 Coin Ticker'),
@@ -82,16 +91,9 @@ class _PriceScreenState extends State<PriceScreen> {
             alignment: Alignment.center,
             padding: EdgeInsets.only(bottom: 30.0),
             color: Colors.teal,
-            child:CupertinoPicker(
-              backgroundColor: Colors.teal,
-              itemExtent:32.0 ,
-              onSelectedItemChanged:(selectedIndex){
-                print(selectedIndex);
-              },
-                children: getPickerItems(),
-              ),
-          ),
-        ],
+            child:iosPicker(), // we can also using the andoidDropdawnButton()
+          )
+        ]
       ),
     );
   }
