@@ -7,7 +7,25 @@ class WelcomeScreen extends StatefulWidget {
   _WelcomeScreenState createState() => _WelcomeScreenState();
 }
 
-class _WelcomeScreenState extends State<WelcomeScreen> {
+class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProviderStateMixin {
+  AnimationController controller;
+  @override
+  void initState() {
+    super.initState();
+
+    controller=AnimationController(
+      duration: Duration(seconds: 1),
+     vsync:this,
+      upperBound: 100.0,
+    );
+    controller.forward();
+    controller.addListener(() {
+     setState(() {
+
+     });
+    });
+  }
+  //use controller.value to animate any this in this file
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,11 +42,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   tag: 'logo',
                   child: Container(
                     child: Image.asset('images/logo.png'),
-                    height: 60.0,
+                    height: controller.value,
                   ),
                 ),
                 Text(
-                  'Flash Chat',
+                'Flash Chat',
+                  //'${controller.value.toInt()}%', we can animate numbers 1 to 100 by this line
                   style: TextStyle(
                     fontSize: 45.0,
                     fontWeight: FontWeight.w900,
@@ -73,6 +92,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   height: 42.0,
                   child: Text(
                     'Register',
+
                   ),
                 ),
               ),
