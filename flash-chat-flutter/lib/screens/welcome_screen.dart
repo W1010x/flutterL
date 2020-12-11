@@ -9,19 +9,26 @@ class WelcomeScreen extends StatefulWidget {
 
 class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProviderStateMixin {
   AnimationController controller;
+  Animation animation;
   @override
   void initState() {
     super.initState();
 
     controller=AnimationController(
-      duration: Duration(seconds: 1),
-     vsync:this,
-      upperBound: 100.0,
-    );
+      //when using curve upperBound should be equal to  one
+      duration: Duration(seconds: 1), vsync:this);
+    animation =CurvedAnimation(parent:controller,curve:Curves.decelerate );
     controller.forward();
+   // animation.addStatusListener((status) { //this for animaton forward and back
+   //   if(status==AnimationStatus.completed){
+   //     controller.reverse(from:1.0);
+   //   }else if(status==AnimationStatus.dismissed)
+   //     controller.forward();
+   // });
+    
     controller.addListener(() {
      setState(() {
-
+print(animation.value);
      });
     });
   }
@@ -42,8 +49,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
                   tag: 'logo',
                   child: Container(
                     child: Image.asset('images/logo.png'),
-                    height: controller.value,
-                  ),
+                    height: controller.value*100,
+                  )
                 ),
                 Text(
                 'Flash Chat',
