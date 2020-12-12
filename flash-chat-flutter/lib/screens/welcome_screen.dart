@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'login_screen.dart';
 import 'registration_screen.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 class WelcomeScreen extends StatefulWidget {
  static const  String id='home';
   @override
@@ -25,7 +26,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
    //   }else if(status==AnimationStatus.dismissed)
    //     controller.forward();
    // });
-    
+
     controller.addListener(() {
      setState(() {
 print(animation.value);
@@ -52,12 +53,13 @@ print(animation.value);
                     height: controller.value*100,
                   )
                 ),
-                Text(
-                'Flash Chat',
+                TypewriterAnimatedTextKit(
+                text:['Flash Chat'],
                   //'${controller.value.toInt()}%', we can animate numbers 1 to 100 by this line
-                  style: TextStyle(
-                    fontSize: 45.0,
-                    fontWeight: FontWeight.w900,
+                  textStyle: TextStyle(
+                    fontSize: 40.0,
+                    color: Colors.blueGrey,
+                    fontWeight: FontWeight.w300,
                   ),
                 ),
               ],
