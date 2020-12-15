@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'coin_data.dart';
+import 'dart:io'show Platform;//we can used word 'hide' to hide some file in this packeg
 class PriceScreen extends StatefulWidget {
   @override
   _PriceScreenState createState() => _PriceScreenState();
@@ -30,21 +31,16 @@ class _PriceScreenState extends State<PriceScreen> {
         child: Text(currency),
         value: currency,
       );
-
       dropdownItems.add(newItem); //every time we create new item it will add it into dropdownItems
     }
-    return dropdownItems;
-  }
 
-  //--------------
-
+    
 CupertinoPicker iosPicker(){
 
     List<Text> pickerItems=[];
     for(String currency in currenciesList) {
       pickerItems.add(Text(currency));
     }
-
      return CupertinoPicker(
        backgroundColor: Colors.teal,
        itemExtent:32.0 ,
@@ -53,6 +49,13 @@ CupertinoPicker iosPicker(){
        },
        children: pickerItems,
      );
+  }
+  // Widget getPicker(){
+  //    if(Platform.isIOS){
+  //      return iosPicker();
+  //    }else if(Platform.isAndroid){
+  //      return androidDropDown();
+  //    }
   }
   @override
   Widget build(BuildContext context) {
@@ -91,7 +94,7 @@ CupertinoPicker iosPicker(){
             alignment: Alignment.center,
             padding: EdgeInsets.only(bottom: 30.0),
             color: Colors.teal,
-            child:iosPicker(), // we can also using the andoidDropdawnButton()
+            child:Platform.isIOS?iosPicker():androidDropDown(), //using ternary operator
           )
         ]
       ),
